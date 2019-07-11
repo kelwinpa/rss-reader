@@ -55,4 +55,15 @@ public class ComponentLogs {
 	protected void logExit(String methodName, Object... result) {
 		logger.info(EXIT_LOG_HEADER_RESULT, objectType, objectName, methodName, result);
 	}
+
+	protected void logExitWithErrors(String methodName, Exception e) {
+		if (!(e instanceof CustomException))
+			logger.error(EXIT_LOG_HEADER_ERROR, objectType, objectName, methodName, GENERIC_ERROR);
+		else {
+			CustomException ce = (CustomException) e;
+			String cause = e.getMessage();
+			String errorMessage = String.format("CustomException:%d, message = %s", ce.getErrorCode(), cause);
+			logger.error(EXIT_LOG_HEADER_ERROR, objectType, objectName, methodName, errorMessage);
+		}
+	}
 }

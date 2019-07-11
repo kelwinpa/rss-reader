@@ -23,6 +23,7 @@ public class RssRestController extends AbstractController {
 	private RssService rssService;
 
 	public RssRestController() {
+		this.objectType = CONTROLLER_LABEL;
 		this.objectName = "RssRestController";
 	}
 

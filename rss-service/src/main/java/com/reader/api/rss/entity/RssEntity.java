@@ -26,13 +26,11 @@ public class RssEntity extends GenericEntity {
 	@Column(name = "description")
 	private String description;
 
-	@Temporal(TemporalType.DATE)
 	@Column(name = "pub_date")
-	private Date pubDate;
+	private String pubDate;
 
-	@Lob
 	@Column(name = "image")
-	private Byte[] image;
+	private String image;
 
 	public Long getId() {
 		return id;
@@ -58,19 +56,20 @@ public class RssEntity extends GenericEntity {
 		this.description = description;
 	}
 
-	public Date getPubDate() {
+	public String getPubDate() {
 		return pubDate;
 	}
 
-	public void setPubDate(Date pubDate) {
+	public void setPubDate(String pubDate) {
 		this.pubDate = pubDate;
 	}
 
-	public Byte[] getImage() {
+	public String getImage() {
 		return image;
 	}
 
-	public void setImage(Byte[] image) {
+	public void setImage(String image) {
 		this.image = image;
 	}
+
 }

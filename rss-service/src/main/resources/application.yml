@@ -10,4 +10,7 @@ spring:
     database-platform: org.hibernate.dialect.H2Dialect
 
 server:
-  port: 8181 
+  port: 8181
+  
+endpoint:
+  url: http://feeds.nos.nl/nosjournaal?format=
