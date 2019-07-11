@@ -1,4 +1,4 @@
-package com.reader.api.rss.model;
+package com.reader.api.rss.entity;
 
 import java.util.Date;
 
@@ -10,11 +10,11 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import com.reader.api.rss.util.GenericJpaEntity;
+import com.reader.api.rss.util.GenericEntity;
 
 @Entity
 @Table(name = "rss")
-public class RssModel extends GenericJpaEntity {
+public class RssEntity extends GenericEntity {
 
 	@Id
 	private Long id;

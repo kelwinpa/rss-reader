@@ -8,7 +8,7 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public abstract class GenericJpaEntity implements Serializable {
+public abstract class GenericEntity implements Serializable {
 
 	private static final long serialVersionUID = 6276953925841544519L;
 
