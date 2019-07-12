@@ -1,11 +1,13 @@
 package com.reader.api.rss.domain;
 
+import java.util.List;
+
 public class Channel {
 	private Image image;
 
 	private String copyright;
 
-	private Item[] item;
+	private List<Item> item;
 
 	private String link;
 
@@ -35,11 +37,11 @@ public class Channel {
 		this.copyright = copyright;
 	}
 
-	public Item[] getItem() {
+	public List<Item> getItem() {
 		return item;
 	}
 
-	public void setItem(Item[] item) {
+	public void setItem(List<Item> item) {
 		this.item = item;
 	}
 
@@ -93,8 +95,9 @@ public class Channel {
 
 	@Override
 	public String toString() {
-		return "ClassPojo [image = " + image + ", copyright = " + copyright + ", item = " + item + ", link = " + link
-				+ ", description = " + description + ", language = " + language + ", title = " + title + ", pubDate = "
-				+ pubDate + ", webMaster = " + webMaster + "]";
+		return "Channel [image=" + image + ", copyright=" + copyright + ", link=" + link + ", description="
+				+ description + ", language=" + language + ", title=" + title + ", pubDate=" + pubDate + ", webMaster="
+				+ webMaster + "]";
 	}
+
 }
