@@ -1,0 +1,12 @@
+version: '3'
+services:
+
+  rss-service:
+    build:
+     context: ./docker
+     dockerfile: Dockerfile
+    image: kpayares/rss-service
+    container_name: rss-service
+    restart: always
+    ports:
+    - 8180:8180
