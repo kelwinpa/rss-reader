@@ -8,4 +8,5 @@ import com.reader.api.rss.entity.RssEntity;
 @Repository
 public interface RssRepository extends CrudRepository<RssEntity, Integer> {
 
+	RssEntity findByTitle(String title);
 }
