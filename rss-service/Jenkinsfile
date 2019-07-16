@@ -16,7 +16,11 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                bat 'mvn -Dmaven.test.failure.ignore=true install'
+                bat '''
+                	mvn clean
+                	mvn compile
+                	mvn install
+                '''
  	       }
         }
         stage('Test') {
