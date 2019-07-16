@@ -22,7 +22,7 @@ public class RssEntity extends GenericEntity {
 	private String title;
 
 	@Lob
-	@Column(name = "description", length = 4096)
+	@Column(name = "description", length = 9050)
 	private String description;
 
 	@Column(name = "pub_date")
