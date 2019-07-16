@@ -1,9 +1,5 @@
 node {
     withMaven(maven:'maven') {
-        stage('Checkout') {
-            git url: 'https://github.com/kelwinpa/rss-reader.git'
-        }
-
         stage('Build') {
             sh 'mvn clean install'
             def pom = readMavenPom file:'pom.xml'
