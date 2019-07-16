@@ -15,25 +15,40 @@ pipeline {
 		}
         stage('Build') {
             steps {
-                echo 'Building..'
-                bat '''
-                	cd rss-service
-                	mvn clean install -DskipTests
-                '''
+               	echo 'Building'
+               	bat 'cd rss-service'
+				stages {
+                	stage('Clean') {
+            			steps {			                
+			                bat	'mvn clean'
+            			}
+            		}
+					stage('Compile') {
+            			steps {			                
+			                bat	'mvn compile'
+            			}
+            		}
+               		stage('Docker Image') {
+            			steps {			                
+			                bat	'mvn install -DskipTests'
+            			}
+            		}
+               }
  	       }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                echo 'Testing'
                 bat '''
                 	cd rss-service
                 	mvn test
                 '''
             }
         }
-        stage('Deploy') {
+        stage('Run') {
             steps {
-                echo 'Deploying....'
+                echo 'Runnnig'
+                docker.image("kpayares/rss-service:latest").run('-p 8180:8180 --name rss-service')
             }
         }
     }
