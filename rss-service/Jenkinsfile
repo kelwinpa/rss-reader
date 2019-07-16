@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh '/rss-service mvn clean install -DskipTests=true'
+                sh 'mvn clean install -DskipTests=true'
  	       }
         }
         stage('Test') {
