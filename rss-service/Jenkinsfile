@@ -18,9 +18,7 @@ pipeline {
                 echo 'Building..'
                 bat '''
                 	cd rss-service
-                	mvn clean
-                	mvn compile
-                	mvn install
+                	mvn clean install
                 '''
  	       }
         }
