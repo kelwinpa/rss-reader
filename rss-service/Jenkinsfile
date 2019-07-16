@@ -5,13 +5,14 @@ pipeline {
         jdk 'jdk8' 
     }
     stages {
-      stage ('Initialize') {
+      	stage ('Initialize') {
            steps {
                sh '''
                    echo "PATH = ${PATH}"
                    echo "MAVEN_HOME = ${MAVEN_HOME}"
-                   '''
-       }
+              '''
+       		}
+		}
     }
     stages {
         stage('Build') {
