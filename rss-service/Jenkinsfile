@@ -1,12 +1,15 @@
-node {
-    withMaven(maven:'maven') {
-
-        stage('Checkout') {
-            git url: 'https://github.com/kelwinpa/rss-reader.git'
+pipeline {
+    agent {
+        docker {
+            image 'maven:3-alpine' 
+            args '-v /root/.m2:/root/.m2' 
         }
-
-        stage('Build') {
-  				sh "./mvnw clean install -DskipTests"
-        } 
+    }
+    stages {
+        stage('Build') { 
+            steps {
+                sh "./mvnw clean install -DskipTests" 
+            }
+        }
     }
 }
