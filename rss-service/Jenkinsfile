@@ -5,10 +5,19 @@ pipeline {
         jdk 'jdk8' 
     }
     stages {
+      stage ('Initialize') {
+           steps {
+               sh '''
+                   echo "PATH = ${PATH}"
+                   echo "MAVEN_HOME = ${MAVEN_HOME}"
+                   '''
+       }
+    }
+    stages {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'mvn clean install -DskipTests=true'
+                sh 'mvn -Dmaven.test.failure.ignore=true install'
  	       }
         }
         stage('Test') {
