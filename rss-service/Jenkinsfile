@@ -18,17 +18,17 @@ pipeline {
                	echo 'Building'
                	bat 'cd rss-service'
 				stages {
-                	stage('Clean') {
+                	stage('Cleaning') {
             			steps {			                
 			                bat	'mvn clean'
             			}
             		}
-					stage('Compile') {
+					stage('Compiling') {
             			steps {			                
 			                bat	'mvn compile'
             			}
             		}
-               		stage('Docker Image') {
+               		stage('Image') {
             			steps {			                
 			                bat	'mvn install -DskipTests'
             			}
