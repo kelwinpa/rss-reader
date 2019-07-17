@@ -4,6 +4,8 @@ The goal of this application is to be able to distribute data from different fee
 
 The project is a microservice that polls a news feed from http://feeds.nos.nl/nosjournaal?format=xml and stores the data in an SQL database.
 
+All layers have been tested with Junit, AssertJ, Suite and Spring Test.
+
 ## Technologies
 
 * [SpringBoot] - Spring Boot makes it easy to create stand-alone, production-grade Spring based Applications that you can "just run".!
