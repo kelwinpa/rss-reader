@@ -17,23 +17,12 @@ pipeline {
             steps {
                	echo 'Building'
                	bat 'cd rss-service'
-				stages {
-                	stage('Cleaning') {
-            			steps {			                
-			                bat	'mvn clean'
-            			}
-            		}
-					stage('Compiling') {
-            			steps {			                
-			                bat	'mvn compile'
-            			}
-            		}
-               		stage('Image') {
-            			steps {			                
-			                bat	'mvn install -DskipTests'
-            			}
-            		}
-               }
+				echo 'Cleaning'			                
+			    bat	'mvn clean'		
+				echo 'Compiling'		                
+				bat	'mvn compile'	
+               	echo 'Image'		                
+				bat	'mvn install -DskipTests'	
  	       }
         }
         stage('Test') {
