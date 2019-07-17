@@ -37,7 +37,7 @@ pipeline {
         stage('Run') {
             steps {
                 echo 'Runnnig'
-                docker.image("kpayares/rss-service:latest").run('-p 8180:8180 --name rss-service')
+                bat 'docker run -p 8180:8180 --name rss-service kpayares/rss-service:latest'
             }
         }
     }
