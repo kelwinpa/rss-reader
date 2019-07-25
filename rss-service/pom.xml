@@ -84,14 +84,15 @@
 						<phase>package</phase>
 						<goals>
 							<goal>build</goal>
+							<goal>push</goal>
 						</goals>
 					</execution>
 				</executions>
 				<configuration>
 					<dockerDirectory>docker</dockerDirectory>
-<!-- 					<serverId>docker-hub</serverId> -->
-<!-- 					<registryUrl>https://index.docker.io/v1/</registryUrl> -->
-					<imageName>kpayares/rss-service</imageName>
+					<serverId>docker-hub</serverId>
+			     	<registryUrl>https://index.docker.io/v1/</registryUrl>
+					<imageName>stevenxs/rss-service</imageName>
 					<imageTags>
 						<imageTag>latest</imageTag>
 					</imageTags>
@@ -102,7 +103,6 @@
 							<include>${project.build.finalName}.jar</include>
 						</resource>
 					</resources>
-					<pushImage>false</pushImage>
 				</configuration>
 			</plugin>
 		</plugins>

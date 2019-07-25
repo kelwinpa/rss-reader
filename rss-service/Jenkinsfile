@@ -40,7 +40,7 @@ pipeline {
             steps {
                 echo 'Runnnig'
                 bat '''cd rss-service 
-                docker run -d -p 8180:8180 --name rss-service kpayares/rss-service:latest'''
+                docker run -d -p 8180:8180 --name rss-service stevenxs/rss-service:latest'''
             }
         }
     }
